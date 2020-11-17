@@ -1,0 +1,162 @@
+
+.mainColumn {
+  position: relative;
+  padding: 24px;
+  background-color: var(--white-color);
+  color: var(--dark-grey);
+  border: 1px solid var(--border-color);
+  z-index: 1;
+}
+
+.workContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+  gap: 8px;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.workContainer p {
+  color: var(--white-color);
+  font-size: 1.5em;
+}
+
+.workContainer a {
+  flex: 250px;
+  max-height: 300px;
+  border-radius: 6%;
+  background-color: var(--icon-background-color);
+  border: var(--white-color) 4px solid;
+  align-items: center;
+  transition: all 300ms ease-in-out;
+  overflow: hidden;
+}
+
+.workContainer a:hover {
+  background-color: var(--icon-background-color-hover);
+  margin-top: -16px;
+  transition: all 300ms ease-in-out;
+}
+
+.workContainer a:hover .center{
+  color: var(--main-color);
+  transition: all 300ms ease-in-out;
+}
+
+.workContainer a:hover svg {
+  stroke: var(--main-color);
+  transition: all 300ms ease-in-out;
+}
+
+.imageLink {
+  height: 100%;
+}
+
+.imageLink svg {
+  display: block;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  stroke: var(--white-color);
+}
+
+.picture {
+  display: block;
+  height: 80%;
+  width: 100%;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.imageLink img {
+  object-fit: cover;
+  max-height: 260px;
+}
+
+.workContainer a {
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-grey);
+}
+
+svg {
+  stroke: var(--dark-grey);
+  stroke-width: .75;
+}
+
+p > ul {
+  margin-top: 0;
+}
+
+.resume {
+  width: 100%;
+  height: 90vh; 
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+@media only screen and (max-width: 800px) {
+  .twoColumns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.column_1 {
+  padding-right: 8px;
+}
+
+.twoColumns .waymo {
+  border: var(--border-color) 2px solid;
+  padding: 8px;
+  padding-left: 16px;
+  font-family: montserrat;
+}
+
+.waymo p {
+  font-size: 1.1rem;
+}
+
+.waymo blockquote {
+  padding: 4px;
+}
+
+.waymo h1, .waymo h2, .waymo h3 {
+  color: var(--dark-grey);
+}
+
+.twoColumns h2:nth-child(1), .twoColumns h1:nth-child(1) {
+  margin-top: 0.4rem;
+}
+
+strong.highlightword {
+  color: var(--highlight-color);
+}
+
+.container169 {
+  position: relative;
+  width: 100%;
+  padding-top: 60%;
+}
+
+.container169 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.screenshot {
+  border: var(--dark-grey) 1px solid;
+  max-width: 100%;
+}

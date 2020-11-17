@@ -1,0 +1,48 @@
+.footer {
+  background-color: var(--dark-grey);
+  height: 200px;
+  margin-top: -48px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.contact svg {
+  stroke: var(--white-color);
+  fill: rgba(0, 0, 0, 0);
+  height: 24px;
+}
+
+.footerColumn {
+  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--white-color);
+}
+
+.contact ul {
+  display: block;
+  padding: 0px;
+}
+
+.contact li {
+  display: inline-block;
+}
+
+.contact a:hover {
+  border-bottom: 1px solid var(--white-color);
+  transition: all 400ms ease-in-out;
+}
+
+.contact a:hover svg {
+  fill: purple;
+  transition: all 200ms ease-in-out;
+}
+
+.contact a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  color: var(--white-color);
+}

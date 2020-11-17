@@ -1,0 +1,49 @@
+.header {
+  background: url(../../static/typewriter.jpeg),var(--header-background-color);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position: center 10%;
+  background-attachment: fixed;
+  width: 100%;
+  padding-bottom: 120px;
+  margin-bottom: -120px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 64px;
+}
+
+.header img {
+  width: 200px;
+  height: 200px;
+  border: 6px solid var(--white-color);
+  border-radius: 50%;
+}
+
+.header h1 {
+font-size: 3rem;
+color: var(--white-color);
+}
+
+.text {
+  color: var(--white-color);
+  padding: 24px;
+}
+
+p{
+  font-size: 1.2rem;
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}

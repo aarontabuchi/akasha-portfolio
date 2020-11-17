@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+  --main-color: orchid;
+  --secondary-color: plum;
+  --white-color: white;
+  --header-background-color:  rgb(151, 54, 151);
+  --background-grey: #e7e7e7;
+  --dark-grey: #2D2D2D;
+  --border-color: grey;
+  --icon-background-color: #b4aed1;
+  --icon-background-color-hover: #b4aed167;
+  --highlight-color: #418AAC;
+}
+
+::selection {
+  background-color: var(--secondary-color);
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1000px;
+}
+
+body {
+  background-color: var(--background-grey);
+  font-family: Nunito, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+li {
+  font-size: 1.2rem;
+}

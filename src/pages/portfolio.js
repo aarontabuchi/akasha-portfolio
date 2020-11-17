@@ -133,7 +133,7 @@ export default function Portfolio() {
             title="Long form feature piece"
             picture={
               <Picture
-                src="http://www.pointparknewsservice.com/wp-content/uploads/2013/11/Beekeeper.jpg"
+                src="../../beekeeper.jpg"
                 alt="beekeeper"
               />
             }

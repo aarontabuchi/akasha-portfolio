@@ -2,9 +2,9 @@
 
 :root {
   --main-color: orchid;
-  --secondary-color: plum;
+  --selection-color: rgb(255, 232, 255);
   --white-color: white;
-  --header-background-color:  rgb(151, 54, 151);
+  --header-background-color:  #7052b1;
   --background-grey: #e7e7e7;
   --dark-grey: #2D2D2D;
   --border-color: grey;
@@ -14,7 +14,7 @@
 }
 
 ::selection {
-  background-color: var(--secondary-color);
+  background-color: var(--selection-color);
 }
 
 .wrapper {

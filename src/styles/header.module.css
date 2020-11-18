@@ -2,7 +2,7 @@
   background: url(../../static/typewriter.jpeg),var(--header-background-color);
   background-repeat: no-repeat;
   background-blend-mode: multiply;
-  background-position: center 10%;
+  background-position: center 8%;
   background-attachment: fixed;
   width: 100%;
   padding-bottom: 120px;

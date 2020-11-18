@@ -34,6 +34,11 @@
   overflow: hidden;
 }
 
+.workContainer.contact a {
+  flex: 200px;
+  max-height: none;
+}
+
 .workContainer a:hover {
   background-color: var(--icon-background-color-hover);
   margin-top: -16px;
@@ -141,7 +146,7 @@ p > ul {
 }
 
 strong.highlightword {
-  color: var(--highlight-color);
+  color: #418AAC;
 }
 
 .container169 {
@@ -159,4 +164,49 @@ strong.highlightword {
 .screenshot {
   border: var(--dark-grey) 1px solid;
   max-width: 100%;
+}
+
+form.contact {
+  width: 300px;
+}
+
+.contact legend h2 {
+  margin-bottom: 16px;
+}
+
+.contact input, textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+}
+
+.contact input, textarea {
+  border-style: none;
+  border-bottom: solid 1px grey;
+}
+
+.contact textarea {
+  height: 160px;
+}
+
+.contact button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--icon-background-color);
+  color: var(--white-color);
+  margin: 0;
+  transition: all 300ms ease-in-out;
+}
+
+.contact button:hover {
+  background-color: var(--icon-background-color-hover);
+  color: var(--main-color);
+  transition: all 200ms ease-in-out;
+}
+
+:focus {
+  outline-color: var(--main-color);
 }

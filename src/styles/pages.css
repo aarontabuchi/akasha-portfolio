@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  --main-color: orchid;
+  --main-color: #7537D5;
   --selection-color: rgb(255, 232, 255);
   --white-color: white;
   --header-background-color:  #7052b1;
   --background-grey: #e7e7e7;
   --dark-grey: #2D2D2D;
   --border-color: grey;
-  --icon-background-color: #b4aed1;
-  --icon-background-color-hover: #b4aed167;
+  --icon-background-color: #A37CDD;
+  --icon-background-color-hover: #A37CDD67;
   --highlight-color: #418AAC;
 }
 

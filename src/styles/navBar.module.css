@@ -11,21 +11,20 @@
   display: inline-block;
   padding: 2px;
   margin: 8px;
-}
-
-.nav li:hover {
-  border-bottom: 2px solid var(--white-color);
-  transition: all 300ms ease-in-out;
-}
-
-.nav li {
-  border-bottom: 2px solid rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
   color: var(--white-color);
   font-size: 1.2rem;
   transition: all 400ms ease-in-out;
 }
 
-.isCurrent {
-  background-color: #f1befabb;
+.nav li:hover {
+  color: var(--main-color);
+  background-color: var(--white-color);
+  font-size: 1.3rem;
+  transition: all 400ms ease-in-out;
+}
+
+.isCurrent li{
+  background-color: #a37cddc7;
   border-bottom: 2px solid var(--white-color);
 }

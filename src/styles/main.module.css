@@ -25,7 +25,7 @@
   font-size: 1.5em;
 }
 
-.workContainer a {
+.workContainer .staggerAnimate {
   flex: 250px;
   max-height: 300px;
   border-radius: 6%;
@@ -221,4 +221,8 @@ form.contact {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.staggerAnimate {
+  opacity: 0;
 }

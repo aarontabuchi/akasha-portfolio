@@ -26,7 +26,7 @@ export default function NavBar(props) {
     gsap.utils.toArray(".navAnimation").forEach(container => {
       let item = container.querySelector(".item")
       let tl = gsap.timeline({ paused: true })
-      tl.to(item, { scale:1.1, ease:"power3.out", duration:.2 })
+      tl.to(item, { scale:1.1, ease:"power3.out", duration:.1 })
       container.addEventListener("mouseenter", () => tl.play())
       container.addEventListener("mouseleave", () => tl.reverse())
     })

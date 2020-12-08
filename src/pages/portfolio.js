@@ -19,7 +19,7 @@ gsap.core.globals("ScrollTrigger", ScrollTrigger)
 
 function ImageLink(props) {
   return (
-    <Link to={props.link} className="staggerAnimate">
+    <Link to={props.link} className={Styles.staggerAnimate}>
       <div className={Styles.imageLink}>
         {props.picture}
         <p className={Styles.center}>{props.title}</p>
@@ -31,7 +31,7 @@ function ImageLink(props) {
 function ImageA(props) {
   return (
     <A
-      href={props.link}
+      href={props.link} className={Styles.staggerAnimate}
       label="jounalism example"
       text={
         <div className={Styles.imageLink}>
@@ -43,67 +43,34 @@ function ImageA(props) {
   )
 }
 
-// function fadeInImg(elem) {
-//   gsap.from(".staggerAnimate", {
-//     scrollTrigger: ".staggerAnimate",
-//     opacity: 0,
-//     duration: 2,
-//     y: 400,
-//   })
-//   // gsap.from(elem, {scrollTrigger: elem, opacity:0, duration:2, y:400})
-// }
-
-function animateFrom(elem, direction) {
-  direction = direction | 1
-
-  var x = 0,
-    y = direction * 100
-  gsap.fromTo(
-    elem,
-    { x: x, y: y, autoAlpha: 0 },
-    {
-      duration: .25,
-      x: 0,
-      y: 0,
-      autoAlpha: 1,
-      ease: "expo",
-      overwrite: "auto",
-    }
-  )
-}
-function hide(elem) {
-  gsap.set(elem, {autoAlpha: 0});
-}
-
-
 function Picture(props) {
   return <img src={props.src} alt={props.alt} />
 }
 
+const classN = "." + Styles.staggerAnimate;
+
 export default function Portfolio() {
-  // let animateImg = useRef(null);
-  // useEffect(() => {
-    //   fadeInImg(animateImg);
-    // }, []);
-    
-    useEffect(() => {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray(".staggerAnimate").forEach(function (elem) {
-      hide(elem) // assure that the element is hidden when scrolled into view
-    
-      ScrollTrigger.create({
-        trigger: elem,
-        onEnter: function () {
-          animateFrom(elem)
+      useEffect(() => {
+      console.log(classN)
+        gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.batch(classN, {
+        onEnter: (elements, triggers) => {
+          gsap.to(elements, {opacity: 1, stagger: 0.15, overwrite: true});
+          console.log(elements.length, "elements entered");
         },
-        onEnterBack: function () {
-          animateFrom(elem, -1)
+        onLeave: (elements, triggers) => {
+          gsap.to(elements, {opacity: 0, stagger: 0.15, overwrite: true});
+          console.log(elements.length, "elements left");
         },
-        onLeave: function () {
-          hide(elem)
-        }, // assure that the element is hidden when scrolled into view
-      })
-    })
+        onEnterBack: (elements, triggers) => {
+          gsap.to(elements, {opacity: 1, stagger: 0.15, overwrite: true});
+          console.log(elements.length, "elements entered");
+        },
+        onLeaveBack: (elements, triggers) => {
+          gsap.to(elements, {opacity: 0, stagger: 0.15, overwrite: true});
+          console.log(elements.length, "elements left");
+        }
+      });
   }, []);
   
   return (

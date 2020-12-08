@@ -3,7 +3,8 @@ import React from "react"
 export default function A(props) {
   return (
     <a
-      href={props.href}
+    className={props.className}  
+    href={props.href}
       aria-label={props.label}
       target="_blank"
       rel="noreferrer"

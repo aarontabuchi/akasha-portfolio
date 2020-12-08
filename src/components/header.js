@@ -13,8 +13,13 @@ class Header extends React.Component {
 
   componentDidMount() {
     this.timerID = setInterval(() => this.tick(), 100)
-    if(this.props.animation){
-      (this.imgTween = gsap.from(this.imgContainer, {duration:1, scale:0, delay: 2.8, ease: "power2.out"}))
+    if (this.props.animation) {
+      this.imgTween = gsap.from(this.imgContainer, {
+        duration: 1,
+        scale: 0,
+        delay: 2.8,
+        ease: "power2.out",
+      })
     }
   }
 
@@ -40,7 +45,7 @@ class Header extends React.Component {
             width="200px"
             ref={img => (this.imgContainer = img)}
           />
-          <NavBar animation={this.props.animation}/>
+          <NavBar animation={this.props.animation} />
         </div>
         <div className={Styles.text + " wrapper"}>
           <h1>

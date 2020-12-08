@@ -31,7 +31,8 @@ function ImageLink(props) {
 function ImageA(props) {
   return (
     <A
-      href={props.link} className={Styles.staggerAnimate}
+      href={props.link}
+      className={Styles.staggerAnimate}
       label="jounalism example"
       text={
         <div className={Styles.imageLink}>
@@ -47,32 +48,32 @@ function Picture(props) {
   return <img src={props.src} alt={props.alt} />
 }
 
-const classN = "." + Styles.staggerAnimate;
+const classN = "." + Styles.staggerAnimate
 
 export default function Portfolio() {
-      useEffect(() => {
-      console.log(classN)
-        gsap.registerPlugin(ScrollTrigger);
-      ScrollTrigger.batch(classN, {
-        onEnter: (elements, triggers) => {
-          gsap.to(elements, {opacity: 1, stagger: 0.15, overwrite: true});
-          console.log(elements.length, "elements entered");
-        },
-        onLeave: (elements, triggers) => {
-          gsap.to(elements, {opacity: 0, stagger: 0.15, overwrite: true});
-          console.log(elements.length, "elements left");
-        },
-        onEnterBack: (elements, triggers) => {
-          gsap.to(elements, {opacity: 1, stagger: 0.15, overwrite: true});
-          console.log(elements.length, "elements entered");
-        },
-        onLeaveBack: (elements, triggers) => {
-          gsap.to(elements, {opacity: 0, stagger: 0.15, overwrite: true});
-          console.log(elements.length, "elements left");
-        }
-      });
-  }, []);
-  
+  useEffect(() => {
+    console.log(classN)
+    gsap.registerPlugin(ScrollTrigger)
+    ScrollTrigger.batch(classN, {
+      onEnter: (elements, triggers) => {
+        gsap.to(elements, { opacity: 1, stagger: 0.15, overwrite: true })
+        console.log(elements.length, "elements entered")
+      },
+      onLeave: (elements, triggers) => {
+        gsap.to(elements, { opacity: 0, stagger: 0.15, overwrite: true })
+        console.log(elements.length, "elements left")
+      },
+      onEnterBack: (elements, triggers) => {
+        gsap.to(elements, { opacity: 1, stagger: 0.15, overwrite: true })
+        console.log(elements.length, "elements entered")
+      },
+      onLeaveBack: (elements, triggers) => {
+        gsap.to(elements, { opacity: 0, stagger: 0.15, overwrite: true })
+        console.log(elements.length, "elements left")
+      },
+    })
+  }, [])
+
   return (
     <div>
       <Header headerText="My work" paragraph="Description of page" />

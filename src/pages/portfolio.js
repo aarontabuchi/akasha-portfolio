@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Header from "../components/header"
 import Styles from "../styles/main.module.css"
 import Footer from "../components/footer"
@@ -12,13 +12,17 @@ import {
   FileLike,
 } from "../components/svgs"
 import A from "../components/a"
+import gsap from "gsap/gsap-core"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.core.globals("ScrollTrigger", ScrollTrigger)
 
 function ImageLink(props) {
   return (
-    <Link to={props.link}>
+    <Link to={props.link} className="staggerAnimate">
       <div className={Styles.imageLink}>
-          {props.picture}
-          <p className={Styles.center}>{props.title}</p>
+        {props.picture}
+        <p className={Styles.center}>{props.title}</p>
       </div>
     </Link>
   )
@@ -31,20 +35,77 @@ function ImageA(props) {
       label="jounalism example"
       text={
         <div className={Styles.imageLink}>
-            <div className={Styles.picture}>
-              {props.picture}</div>
-            <p className={Styles.center}>{props.title}</p>
+          <div className={Styles.picture}>{props.picture}</div>
+          <p className={Styles.center}>{props.title}</p>
         </div>
       }
     />
   )
 }
 
+// function fadeInImg(elem) {
+//   gsap.from(".staggerAnimate", {
+//     scrollTrigger: ".staggerAnimate",
+//     opacity: 0,
+//     duration: 2,
+//     y: 400,
+//   })
+//   // gsap.from(elem, {scrollTrigger: elem, opacity:0, duration:2, y:400})
+// }
+
+function animateFrom(elem, direction) {
+  direction = direction | 1
+
+  var x = 0,
+    y = direction * 100
+  gsap.fromTo(
+    elem,
+    { x: x, y: y, autoAlpha: 0 },
+    {
+      duration: .25,
+      x: 0,
+      y: 0,
+      autoAlpha: 1,
+      ease: "expo",
+      overwrite: "auto",
+    }
+  )
+}
+function hide(elem) {
+  gsap.set(elem, {autoAlpha: 0});
+}
+
+
 function Picture(props) {
   return <img src={props.src} alt={props.alt} />
 }
 
 export default function Portfolio() {
+  // let animateImg = useRef(null);
+  // useEffect(() => {
+    //   fadeInImg(animateImg);
+    // }, []);
+    
+    useEffect(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray(".staggerAnimate").forEach(function (elem) {
+      hide(elem) // assure that the element is hidden when scrolled into view
+    
+      ScrollTrigger.create({
+        trigger: elem,
+        onEnter: function () {
+          animateFrom(elem)
+        },
+        onEnterBack: function () {
+          animateFrom(elem, -1)
+        },
+        onLeave: function () {
+          hide(elem)
+        }, // assure that the element is hidden when scrolled into view
+      })
+    })
+  }, []);
+  
   return (
     <div>
       <Header headerText="My work" paragraph="Description of page" />
@@ -69,8 +130,16 @@ export default function Portfolio() {
         </div>
         <h1>Content strategy</h1>
         <div className={Styles.workContainer}>
-          <ImageLink title="Help Center" picture={<Help />} link="/portfolio/help-center/" />
-          <ImageLink title="Knowledge Base" picture={<School />} link="/portfolio/knowledge-base/" />
+          <ImageLink
+            title="Help Center"
+            picture={<Help />}
+            link="/portfolio/help-center/"
+          />
+          <ImageLink
+            title="Knowledge Base"
+            picture={<School />}
+            link="/portfolio/knowledge-base/"
+          />
           <ImageLink
             title="Style guides &amp; more"
             picture={<FileLike />}
@@ -131,12 +200,7 @@ export default function Portfolio() {
           />
           <ImageA
             title="Long form feature piece"
-            picture={
-              <Picture
-                src="../../beekeeper.jpg"
-                alt="beekeeper"
-              />
-            }
+            picture={<Picture src="../../beekeeper.jpg" alt="beekeeper" />}
             link="http://www.pointparknewsservice.com/2013/11/12/the-secret-life-of-beekeepers/"
           />
         </div>

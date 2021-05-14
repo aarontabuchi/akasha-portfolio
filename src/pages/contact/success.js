@@ -1,9 +1,9 @@
 import React from "react"
-import Header from "../components/header"
-import * as Styles from "../styles/main.module.css"
-import Footer from "../components/footer"
-import A from "./../components/a"
-import { Mail, Twitter, Phone, MapPin } from "../components/svgs"
+import Header from "../../components/header"
+import * as Styles from "../../styles/main.module.css"
+import Footer from "../../components/footer"
+import A from "../../components/a"
+import { Mail, Twitter, Phone, MapPin } from "../../components/svgs"
 import { Helmet } from "react-helmet"
 
 function SVGA(props) {
@@ -52,38 +52,8 @@ export default function Contact() {
             title="Meet me"
           />
         </div>
-        <form
-          className={Styles.contact}
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          action="/contact/success"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <legend>
-            <h2>Message me</h2>
-          </legend>
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Albus Dumbledore" />
-          </label>
-          <br></br>
-          <label>
-            Email
-            <input
-              type="email"
-              name="email"
-              placeholder="adumbledore@hogwarts.edu"
-            />
-          </label>
-          <br></br>
-          <label>
-            Message
-            <textarea name="message" placeholder="You're invited!"></textarea>
-          </label>
-          <br></br>
-          <button type="submit">Send!</button>
-        </form>
+        <h1>Success!</h1>
+        <p>Thanks for reaching out. I'll get back to you shortly</p>
       </div>
       <Footer />
     </div>
